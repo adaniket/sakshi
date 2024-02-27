@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playball&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Playball", cursive;
+}
+
+body {
+  background-color: black;
+  & .container {
+    display: flex;
+    margin: 0 auto;
+    padding: 2px 0px;
+    max-width: 450px;
+    /* background-color: #c1c1c1; */
+    min-height: 100vh;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    & #canvas1 {
+      border: 2px solid #000;
+      width: 350px;
+      overflow: hidden;
+    }
+
+    & .canvasTwo {
+      position: absolute;
+      z-index: 10;
+      margin: 0 auto;
+      bottom: 30px;
+      width: 350px;
+      opacity: 0.9;
+    }
+    & .model {
+      position: absolute;
+      z-index: 99;
+      top: 13px;
+      right: 10px;
+      width: 100%;
+      text-align: end;
+    }
+  }
+
+  & h1 {
+    color: aqua;
+  }
+}
+
+.footer_button {
+  background-color: transparent;
+  position: relative;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  padding: 6px 20px;
+}
+.footer_button::before {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  left: 0;
+  top: 0;
+  border: 4px solid blue;
+  border-width: 4px 0 0 4px;
+  transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.footer_button::after {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  border: 4px solid blue;
+  border-width: 0px 4px 4px 0px;
+  right: 0 !important;
+  bottom: 0 !important;
+  transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.footer_button:hover::before {
+  width: 60px;
+}
+.footer_button:hover::after {
+  width: 60px;
+}
+
+.show {
+  height: 100vh !important;
+}
+
+.pop_up {
+  position: fixed;
+  z-index: 100;
+  height: 0;
+  text-align: center;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #000;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 450px;
+  top: 0px;
+  transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transform-origin: bottom;
+
+  & .pop_up_button::after,
+  .pop_up_button::before {
+    border-color: blue;
+  }
+  & h3 {
+    color: #fff;
+    margin-top: 40px;
+    line-height: 30px;
+  }
+  & .valn_box {
+    height: 50vh;
+  }
+}
+
+.preloader_box {
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 99999;
+  display: flex;
+  opacity: 1;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+}
+.wrapper {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 450px;
+}
+
+.preloader_box h1 {
+  color: rgb(128, 0, 30);
+  text-shadow: -1px -1px 0px #fff, 3px 3px 0px rgb(45, 53, 51),
+    6px 6px 0px #00000055;
+  font-size: 2rem;
+  transition: all 0.1s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.scale_box {
+  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  transform: scale(0.8);
+}
+.hide_preloder {
+  opacity: 0;
+  height: 0;
+  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  transform-origin: top;
+}
+
+.hide_preloder .preloader {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.text {
+  font-size: 1rem;
+  line-height: 20px !important;
+  margin-top: 30px !important;
+}
